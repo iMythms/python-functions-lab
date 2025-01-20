@@ -10,6 +10,10 @@
 # Define your function and call it below.
 
 
+def calculate_area_triangle(base, height):
+    return (base * height) / 2
+
+
 print('\nExercise 1:', calculate_area_triangle(10, 5))
 
 
@@ -23,6 +27,9 @@ print('\nExercise 1:', calculate_area_triangle(10, 5))
 # simple_interest(1500, 3.5, 5) should return 262.5.
 #
 # Define your function and call it to see the result.
+
+def simple_interest(principal, rate, time):
+    return (principal * rate * time) / 100
 
 
 print('\nExercise 2:', simple_interest(1000, 5, 2))
@@ -38,6 +45,9 @@ print('\nExercise 2:', simple_interest(1000, 5, 2))
 # apply_discount(80, 10) should return 72.
 #
 # Define your function and call it to display the discounted price.
+
+def apply_discount(price, discount):
+    return price - (price * discount / 100)
 
 
 print('\nExercise 3:', apply_discount(100, 25))
@@ -56,6 +66,11 @@ print('\nExercise 3:', apply_discount(100, 25))
 # convert_temperature(32, 'F') should return 0.0.
 #
 # Define the function and then call it below.
+def convert_temperature(temp, unit):
+    if unit == 'C':
+        return (temp * 9/5) + 32
+    else:
+        return (temp - 32) * 9/5
 
 
 print('\nExercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
@@ -71,6 +86,13 @@ print('\nExercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
 # sum_to(10) should return 55.
 #
 # Define the function and then call it below.
+def sum_to(num):
+    total = 0
+    i = 1
+    while i <= num:
+        total += i
+        i += 1
+    return total
 
 
 print('\nExercise 5:', sum_to(6))
@@ -85,6 +107,13 @@ print('\nExercise 5:', sum_to(6))
 # largest(10, 4, 2) should return 10.
 #
 # Define your function and test it with different inputs.
+def largest(num1, num2, num3):
+    largest = num1
+    if num1 < num2:
+        largest = num2
+    if largest < num3:
+        return num3
+    return largest
 
 
 print('\nExercise 6:', largest(1, 2, 3))
@@ -99,6 +128,8 @@ print('\nExercise 6:', largest(1, 2, 3))
 # calculate_tip(50, 20) should return 10.
 #
 # Write your function and test its output below.
+def calculate_tip(amount, tip):
+    return amount * tip/100
 
 
 print('\nExercise 7:', calculate_tip(50, 20))
@@ -114,6 +145,11 @@ print('\nExercise 7:', calculate_tip(50, 20))
 # product(2, 5, 5) should return 50.
 #
 # Define the function and call it with different sets of numbers to test.
+def product(*args):
+    total = 1
+    for arg in args:
+        total *= arg
+    return total
 
 
 print('\nExercise 8:', product(2, 5, 5))
@@ -133,6 +169,15 @@ print('\nExercise 8:', product(2, 5, 5))
 # basic_calculator(10, 5, 'divide') should return 2.
 #
 # Define the function and then call it below.
+def basic_calculator(first, second, operation):
+    if operation == 'add':
+        return first + second
+    elif operation == 'subtract':
+        return first - second
+    elif operation == 'multiply':
+        return first * second
+    else:
+        return first / second
 
 
 print('\nExercise 9 Result:', basic_calculator(10, 5, "subtract"))
